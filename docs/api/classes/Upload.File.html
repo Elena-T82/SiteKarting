@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit--><script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">                    <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">                            <li><a href="../namespaces/Composer.html">\Composer</a></li>                            <li><a href="../namespaces/Upload.html">\Upload</a></li>                        </ul>
+                    </li>                    <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">283</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">                                    <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">                                    <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">    <section class="row-fluid">
+        <div class="span2 sidebar">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-toggle" data-toggle="collapse" data-target="#namespace-1957998447"></a>                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1957998447" class="accordion-body collapsein">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1608531262"></a>                <a href="../namespaces/Composer.html" style="margin-left: 30px; padding-left: 0">Composer</a>
+            </div>
+            <div id="namespace-1608531262" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1430431582"></a>                <a href="../namespaces/Composer.Autoload.html" style="margin-left: 30px; padding-left: 0">Autoload</a>
+            </div>
+            <div id="namespace-1430431582" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/Composer.Autoload.ClassLoader.html">ClassLoader</a></li>                            <li class="class"><a href="../classes/Composer.Autoload.ComposerStaticInitcc190c915c63174ab375f3321d1093a2.html">ComposerStaticInitcc190c915c63174ab375f3321d1093a2</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1019962686"></a>                <a href="../namespaces/Upload.html" style="margin-left: 30px; padding-left: 0">Upload</a>
+            </div>
+            <div id="namespace-1019962686" class="accordion-body collapse">
+                <div class="accordion-inner">    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-784157178"></a>                <a href="../namespaces/Upload.Exception.html" style="margin-left: 30px; padding-left: 0">Exception</a>
+            </div>
+            <div id="namespace-784157178" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/Upload.Exception.UploadException.html">UploadException</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-1584599156"></a>                <a href="../namespaces/Upload.Storage.html" style="margin-left: 30px; padding-left: 0">Storage</a>
+            </div>
+            <div id="namespace-1584599156" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/Upload.Storage.Base.html">Base</a></li>                            <li class="class"><a href="../classes/Upload.Storage.FileSystem.html">FileSystem</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">                    <a class="accordion-togglecollapsed" data-toggle="collapse" data-target="#namespace-244037801"></a>                <a href="../namespaces/Upload.Validation.html" style="margin-left: 30px; padding-left: 0">Validation</a>
+            </div>
+            <div id="namespace-244037801" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <ul>                            <li class="class"><a href="../classes/Upload.Validation.Base.html">Base</a></li>                            <li class="class"><a href="../classes/Upload.Validation.Extension.html">Extension</a></li>                            <li class="class"><a href="../classes/Upload.Validation.Mimetype.html">Mimetype</a></li>                            <li class="class"><a href="../classes/Upload.Validation.Size.html">Size</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/Upload.Autoloader.html">Autoloader</a></li>                            <li class="class"><a href="../classes/Upload.File.html">File</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul>                            <li class="class"><a href="../classes/ComposerAutoloaderInitcc190c915c63174ab375f3321d1093a2.html">ComposerAutoloaderInitcc190c915c63174ab375f3321d1093a2</a></li>                            <li class="class"><a href="../classes/course.html">course</a></li>                            <li class="class"><a href="../classes/ExtensionTest.html">ExtensionTest</a></li>                            <li class="class"><a href="../classes/FileSystemTest.html">FileSystemTest</a></li>                            <li class="class"><a href="../classes/FileTest.html">FileTest</a></li>                            <li class="class"><a href="../classes/FPDF.html">FPDF</a></li>                            <li class="class"><a href="../classes/membre.html">membre</a></li>                            <li class="class"><a href="../classes/MimetypeTest.html">MimetypeTest</a></li>                            <li class="class"><a href="../classes/PDF.html">PDF</a></li>                            <li class="class"><a href="../classes/SizeTest.html">SizeTest</a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav><a href="../namespaces/Upload.html">\Upload</a> <i class="icon-level-up"></i>                    </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\Upload</small>File</h1>
+                    <p><em>File</em></p><p>This class provides the implementation for an uploaded file. It exposes
+common attributes for the uploaded file (e.g. name, extension, media type)
+and allows you to attach validations to the file that must pass for the
+upload to succeed.</p>                    
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">                                    <a href="../classes/Upload.File.html#method___construct" class="">__construct()</a><br />                                    <a href="../classes/Upload.File.html#method_getName" class="">getName()</a><br />                                    <a href="../classes/Upload.File.html#method_setName" class="">setName()</a><br />                                    <a href="../classes/Upload.File.html#method_getNameWithExtension" class="">getNameWithExtension()</a><br />                                    <a href="../classes/Upload.File.html#method_getExtension" class="">getExtension()</a><br />                                    <a href="../classes/Upload.File.html#method_getMimetype" class="">getMimetype()</a><br />                                    <a href="../classes/Upload.File.html#method_getMd5" class="">getMd5()</a><br />                                    <a href="../classes/Upload.File.html#method_getDimensions" class="">getDimensions()</a><br />                                    <a href="../classes/Upload.File.html#method_addValidations" class="">addValidations()</a><br />                                    <a href="../classes/Upload.File.html#method_getValidations" class="">getValidations()</a><br />                                    <a href="../classes/Upload.File.html#method_validate" class="">validate()</a><br />                                    <a href="../classes/Upload.File.html#method_getErrors" class="">getErrors()</a><br />                                    <a href="../classes/Upload.File.html#method_addError" class="">addError()</a><br />                                    <a href="../classes/Upload.File.html#method_upload" class="">upload()</a><br />                                    <a href="../classes/Upload.File.html#method_isUploadedFile" class="">isUploadedFile()</a><br />                                    <a href="../classes/Upload.File.html#method_isOk" class="">isOk()</a><br />                                    <a href="../classes/Upload.File.html#method_humanReadableToBytes" class="">humanReadableToBytes()</a><br />                            </section>
+                            <section class="span4">                                    <em>No public properties found</em>                            </section>
+                            <section class="span4">                                    <em>No constants found</em>                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">                                    <em>No protected methods found</em>                            </section>
+                            <section class="span4">                                    <a href="../classes/Upload.File.html#property_errorCodeMessages" class="">$errorCodeMessages</a><br />                                    <a href="../classes/Upload.File.html#property_units" class="">$units</a><br />                                    <a href="../classes/Upload.File.html#property_storage" class="">$storage</a><br />                                    <a href="../classes/Upload.File.html#property_validations" class="">$validations</a><br />                                    <a href="../classes/Upload.File.html#property_errors" class="">$errors</a><br />                                    <a href="../classes/Upload.File.html#property_originalName" class="">$originalName</a><br />                                    <a href="../classes/Upload.File.html#property_name" class="">$name</a><br />                                    <a href="../classes/Upload.File.html#property_extension" class="">$extension</a><br />                                    <a href="../classes/Upload.File.html#property_mimetype" class="">$mimetype</a><br />                                    <a href="../classes/Upload.File.html#property_errorCode" class="">$errorCode</a><br />                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">                                    <em>No private methods found</em>                            </section>
+                            <section class="span4">                                    <em>No private properties found</em>                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/vendor.codeguy.upload.src.Upload.File.html"><div class="path-wrapper">vendor\codeguy\upload\src\Upload\File.php</div></a></dd>                        <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Upload</div></dd>                        <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                        <div class="namespace-wrapper">\SplFileInfo</div>                                <div class="namespace-wrapper">\Upload\File</div>
+                            </dd>                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">                        <tr>
+                            <th>author
+                            </th>
+                            <td><p>Josh Lockhart <a href="mailto:info@joshlockhart.com">info@joshlockhart.com</a></p>                            </td>
+                        </tr>                        <tr>
+                            <th>since
+                            </th>
+                            <td>                            </td>
+                        </tr>                    </table>
+                </aside>
+            </div>            <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_errorCodeMessages" name="property_errorCodeMessages" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected">$errorCodeMessages</h3>
+                <pre class="signature">$errorCodeMessages :array</pre>
+                <p><em>Upload error code messages</em></p>                <h4>Type</h4>array            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_units" name="property_units" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected">$units</h3>
+                <pre class="signature">$units :array</pre>
+                <p><em>Lookup hash to convert file units to bytes</em></p>                <h4>Type</h4>array            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_storage" name="property_storage" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected">$storage</h3>
+                <pre class="signature">$storage :\Upload\Storage\Base</pre>
+                <p><em>Storage delegate</em></p>                <h4>Type</h4><a href="../classes/Upload.Storage.Base.html">\Upload\Storage\Base</a>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_validations" name="property_validations" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected">$validations</h3>
+                <pre class="signature">$validations :\Upload\array[\Upload\Validation\Base]</pre>
+                <p><em>Validations</em></p>                <h4>Type</h4>\Upload\array[\Upload\Validation\Base]            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_errors" name="property_errors" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected">$errors</h3>
+                <pre class="signature">$errors :array</pre>
+                <p><em>Validation errors</em></p>                <h4>Type</h4>array            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_originalName" name="property_originalName" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected">$originalName</h3>
+                <pre class="signature">$originalName :string</pre>
+                <p><em>Original file name provided by client (for internal use only)</em></p>                <h4>Type</h4>string            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_name" name="property_name" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected">$name</h3>
+                <pre class="signature">$name :string</pre>
+                <p><em>File name (without extension)</em></p>                <h4>Type</h4>string            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_extension" name="property_extension" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected">$extension</h3>
+                <pre class="signature">$extension :string</pre>
+                <p><em>File extension (without leading dot)</em></p>                <h4>Type</h4>string            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_mimetype" name="property_mimetype" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected">$mimetype</h3>
+                <pre class="signature">$mimetype :string</pre>
+                <p><em>File mimetype (e.g. &quot;image/png&quot;)</em></p>                <h4>Type</h4>string            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_errorCode" name="property_errorCode" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected">$errorCode</h3>
+                <pre class="signature">$errorCode :integer</pre>
+                <p><em>Upload error code (for internal use only)</em></p>                <h4>Type</h4>integer            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                        <dt>See also</dt>                        <dd><a href="http://www.php.net/manual/en/features.file-upload.errors.php"><span class="namespace-wrapper">http://www.php.net/manual/en/features.file-upload.errors.php</span></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>            <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(string  <span class="argument">$key</span>,\Upload\Storage\Base  <span class="argument">$storage</span>)</pre>
+                <p><em>Constructor</em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td>string</td>
+                                <td>$key</td>
+                                <td><p>The file's key in $_FILES superglobal</p></td>
+                            </tr>                            <tr>
+                                <td><a href="../classes/Upload.Storage.Base.html">\Upload\Storage\Base</a></td>
+                                <td>$storage</td>
+                                <td><p>The method with which to store file</p></td>
+                            </tr>                    </table>                    <h4>Throws</h4>
+                    <dl>                            <dt>\Upload\Exception\UploadException</dt>
+                            <dd><p>If file uploads are disabled in the php.ini file</p></dd>                            <dt>\InvalidArgumentException</dt>
+                            <dd><p>If $_FILES key does not exist</p></dd>                    </dl>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getName" name="method_getName" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">getName()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getName(): string</pre>
+                <p><em>Get name</em></p>                    <h4>Returns</h4>string            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setName" name="method_setName" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">setName()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setName(string  <span class="argument">$name</span>): \Upload\File</pre>
+                <p><em>Set name (without extension)</em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td>string</td>
+                                <td>$name</td>
+                                <td></td>
+                            </tr>                    </table>                    <h4>Returns</h4><a href="../classes/Upload.File.html">\Upload\File</a>                        &mdash;<p>Self</p>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getNameWithExtension" name="method_getNameWithExtension" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">getNameWithExtension()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getNameWithExtension(): string</pre>
+                <p><em>Get file name with extension</em></p>                    <h4>Returns</h4>string            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getExtension" name="method_getExtension" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">getExtension()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getExtension(): string</pre>
+                <p><em>Get file extension (without leading dot)</em></p>                    <h4>Returns</h4>string            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getMimetype" name="method_getMimetype" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">getMimetype()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getMimetype(): string</pre>
+                <p><em>Get mimetype</em></p>                    <h4>Returns</h4>string            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getMd5" name="method_getMd5" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">getMd5()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getMd5(): string</pre>
+                <p><em>Get md5</em></p>                    <h4>Returns</h4>string            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getDimensions" name="method_getDimensions" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">getDimensions()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getDimensions(): array</pre>
+                <p><em>Get image dimensions</em></p>                    <h4>Returns</h4>array                        &mdash;<p>formatted array of dimensions</p>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_addValidations" name="method_addValidations" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">addValidations()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">addValidations(\Upload\Validation\Base|\Upload\array[\Upload\Validation\Base]  <span class="argument">$validations</span>)</pre>
+                <p><em>Add file validations</em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td><a href="../classes/Upload.Validation.Base.html">\Upload\Validation\Base</a>|\Upload\array[\Upload\Validation\Base]</td>
+                                <td>$validations</td>
+                                <td></td>
+                            </tr>                    </table>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getValidations" name="method_getValidations" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">getValidations()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getValidations(): \Upload\array[\Upload\Validation\Base]</pre>
+                <p><em>Get file validations</em></p>                    <h4>Returns</h4>\Upload\array[\Upload\Validation\Base]            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_validate" name="method_validate" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">validate()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">validate(): boolean</pre>
+                <p><em>Validate file</em></p>                    <h4>Returns</h4>boolean                        &mdash;<p>True if valid, false if invalid</p>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getErrors" name="method_getErrors" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">getErrors()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getErrors(): \Upload\array[String]</pre>
+                <p><em>Get file validation errors</em></p>                    <h4>Returns</h4>\Upload\array[String]            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_addError" name="method_addError" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">addError()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">addError(  <span class="argument">$error</span>): \Upload\File</pre>
+                <p><em>Add file validation error</em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td></td>
+                                <td>$error</td>
+                                <td></td>
+                            </tr>                    </table>                    <h4>Returns</h4><a href="../classes/Upload.File.html">\Upload\File</a>                        &mdash;<p>Self</p>            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_upload" name="method_upload" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">upload()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">upload(string  <span class="argument">$newName = null</span>): boolean</pre>
+                <p><em>Upload file (delegated to storage object)</em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td>string</td>
+                                <td>$newName</td>
+                                <td><p>Give the file it a new name</p></td>
+                            </tr>                    </table>                    <h4>Throws</h4>
+                    <dl>                            <dt>\Upload\Exception\UploadException</dt>
+                            <dd><p>If file does not validate</p></dd>                    </dl>                    <h4>Returns</h4>boolean            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_isUploadedFile" name="method_isUploadedFile" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">isUploadedFile()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">isUploadedFile(): boolean</pre>
+                <p><em>Is this file uploaded with a POST request?</em></p><p>This is a separate method so that it can be stubbed in unit tests to avoid
+the hard dependency on the <code>is_uploaded_file</code> function.</p>                    <h4>Returns</h4>boolean            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_isOk" name="method_isOk" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">isOk()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">isOk(): boolean</pre>
+                <p><em>Is this file OK?</em></p><p>This method inspects the upload error code to see if the upload was
+successful or if it failed for a variety of reasons.</p>                    <h4>Returns</h4>boolean            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>            <dl>                        <dt>See also</dt>                        <dd><a href="http://www.php.net/manual/en/features.file-upload.errors.php"><span class="namespace-wrapper">http://www.php.net/manual/en/features.file-upload.errors.php</span></a></dd>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_humanReadableToBytes" name="method_humanReadableToBytes" class="anchor"></a>
+            <article class="method">
+                <h3 class="public">humanReadableToBytes()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">humanReadableToBytes(string  <span class="argument">$input</span>): integer</pre>
+                <p><em>Convert human readable file size (e.g. &quot;10K&quot; or &quot;3M&quot;) into bytes</em></p>                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">                            <tr>
+                                <td>string</td>
+                                <td>$input</td>
+                                <td></td>
+                            </tr>                    </table>                    <h4>Returns</h4>integer            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>                <span class="label label-info">static</span>            <dl>            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">                    <tr><td colspan="2"><em>None found</em></td></tr>            </table>
+        </aside>
+    </div>        </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">File.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/vendor\codeguy\upload\src\Upload\File.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">                            <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>                                        <li><a href="../namespaces/Composer.html">\Composer</a></li>                                        <li><a href="../namespaces/Upload.html">\Upload</a></li>                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">                            <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">                            <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    onFebruary 23rd, 2020 at 23:32.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

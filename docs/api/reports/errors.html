@@ -1,0 +1,2133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title> &raquo; Compilation errors</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">                    <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">                            <li><a href="../namespaces/Composer.html">\Composer</a></li>                            <li><a href="../namespaces/Upload.html">\Upload</a></li>                        </ul>
+                    </li>                    <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">283</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">                                    <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">                                    <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">    <section class="row-fluid">
+        <div class="span2 sidebar">
+
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">Navigation</li>                        <li><a href="#head.php"><i class="icon-file"></i>head.php</a></li>                        <li><a href="#font\timesb.php"><i class="icon-file"></i>font\timesb.php</a></li>                        <li><a href="#font\helveticab.php"><i class="icon-file"></i>font\helveticab.php</a></li>                        <li><a href="#font\times.php"><i class="icon-file"></i>font\times.php</a></li>                        <li><a href="#requete\historiqueCourse.php"><i class="icon-file"></i>requete\historiqueCourse.php</a></li>                        <li><a href="#bdd.php"><i class="icon-file"></i>bdd.php</a></li>                        <li><a href="#font\helveticai.php"><i class="icon-file"></i>font\helveticai.php</a></li>                        <li><a href="#requete\connexion.php"><i class="icon-file"></i>requete\connexion.php</a></li>                        <li><a href="#requete\Panier.php"><i class="icon-file"></i>requete\Panier.php</a></li>                        <li><a href="#HistoriqueMembre.php"><i class="icon-file"></i>HistoriqueMembre.php</a></li>                        <li><a href="#vendor\codeguy\upload\src\Upload\Storage\Base.php"><i class="icon-file"></i>vendor\codeguy\upload\src\Upload\Storage\Base.php</a></li>                        <li><a href="#classe\course.php"><i class="icon-file"></i>classe\course.php</a></li>                        <li><a href="#requete\gestionCourse.php"><i class="icon-file"></i>requete\gestionCourse.php</a></li>                        <li><a href="#requete\autocompletion.php"><i class="icon-file"></i>requete\autocompletion.php</a></li>                        <li><a href="#deconnexion.php"><i class="icon-file"></i>deconnexion.php</a></li>                        <li><a href="#vendor\codeguy\upload\tests\FileTest.php"><i class="icon-file"></i>vendor\codeguy\upload\tests\FileTest.php</a></li>                        <li><a href="#uneCourse.php"><i class="icon-file"></i>uneCourse.php</a></li>                        <li><a href="#vendor\composer\autoload_classmap.php"><i class="icon-file"></i>vendor\composer\autoload_classmap.php</a></li>                        <li><a href="#font\timesi.php"><i class="icon-file"></i>font\timesi.php</a></li>                        <li><a href="#Menu.php"><i class="icon-file"></i>Menu.php</a></li>                        <li><a href="#vendor\composer\ClassLoader.php"><i class="icon-file"></i>vendor\composer\ClassLoader.php</a></li>                        <li><a href="#font\courier.php"><i class="icon-file"></i>font\courier.php</a></li>                        <li><a href="#vendor\composer\autoload_static.php"><i class="icon-file"></i>vendor\composer\autoload_static.php</a></li>                        <li><a href="#vendor\composer\autoload_real.php"><i class="icon-file"></i>vendor\composer\autoload_real.php</a></li>                        <li><a href="#fpdf.php"><i class="icon-file"></i>fpdf.php</a></li>                        <li><a href="#font\helveticabi.php"><i class="icon-file"></i>font\helveticabi.php</a></li>                        <li><a href="#GestionCourses.php"><i class="icon-file"></i>GestionCourses.php</a></li>                        <li><a href="#font\courierb.php"><i class="icon-file"></i>font\courierb.php</a></li>                        <li><a href="#ListeCourses.php"><i class="icon-file"></i>ListeCourses.php</a></li>                        <li><a href="#vendor\codeguy\upload\tests\Validation\MimetypeTest.php"><i class="icon-file"></i>vendor\codeguy\upload\tests\Validation\MimetypeTest.php</a></li>                        <li><a href="#requete\paiement.php"><i class="icon-file"></i>requete\paiement.php</a></li>                        <li><a href="#Footer.php"><i class="icon-file"></i>Footer.php</a></li>                        <li><a href="#Panier.php"><i class="icon-file"></i>Panier.php</a></li>                        <li><a href="#vendor\codeguy\upload\tests\Validation\ExtensionTest.php"><i class="icon-file"></i>vendor\codeguy\upload\tests\Validation\ExtensionTest.php</a></li>                        <li><a href="#font\helvetica.php"><i class="icon-file"></i>font\helvetica.php</a></li>                        <li><a href="#Connexion.php"><i class="icon-file"></i>Connexion.php</a></li>                        <li><a href="#vendor\codeguy\upload\tests\bootstrap.php"><i class="icon-file"></i>vendor\codeguy\upload\tests\bootstrap.php</a></li>                        <li><a href="#font\courieri.php"><i class="icon-file"></i>font\courieri.php</a></li>                        <li><a href="#classe\membre.php"><i class="icon-file"></i>classe\membre.php</a></li>                        <li><a href="#font\zapfdingbats.php"><i class="icon-file"></i>font\zapfdingbats.php</a></li>                        <li><a href="#font\symbol.php"><i class="icon-file"></i>font\symbol.php</a></li>                        <li><a href="#index.php"><i class="icon-file"></i>index.php</a></li>                        <li><a href="#HistoriqueAdmin.php"><i class="icon-file"></i>HistoriqueAdmin.php</a></li>                        <li><a href="#vendor\codeguy\upload\src\Upload\Exception\UploadException.php"><i class="icon-file"></i>vendor\codeguy\upload\src\Upload\Exception\UploadException.php</a></li>                        <li><a href="#font\courierbi.php"><i class="icon-file"></i>font\courierbi.php</a></li>                        <li><a href="#CreerCompte.php"><i class="icon-file"></i>CreerCompte.php</a></li>                        <li><a href="#vendor\composer\autoload_namespaces.php"><i class="icon-file"></i>vendor\composer\autoload_namespaces.php</a></li>                        <li><a href="#vendor\codeguy\upload\tests\Validation\SizeTest.php"><i class="icon-file"></i>vendor\codeguy\upload\tests\Validation\SizeTest.php</a></li>                        <li><a href="#vendor\codeguy\upload\tests\Storage\FileSystemTest.php"><i class="icon-file"></i>vendor\codeguy\upload\tests\Storage\FileSystemTest.php</a></li>                        <li><a href="#vendor\autoload.php"><i class="icon-file"></i>vendor\autoload.php</a></li>                        <li><a href="#font\timesbi.php"><i class="icon-file"></i>font\timesbi.php</a></li>                        <li><a href="#requete\enregistrement.php"><i class="icon-file"></i>requete\enregistrement.php</a></li>                        <li><a href="#requete\genererPDF.php"><i class="icon-file"></i>requete\genererPDF.php</a></li>                        <li><a href="#vendor\composer\autoload_psr4.php"><i class="icon-file"></i>vendor\composer\autoload_psr4.php</a></li>            </ul>
+        </div>
+
+        <div class="span10 offset2">
+            <ul class="breadcrumb">
+                <li><a href="../"><i class="icon-remove-sign"></i></a><span class="divider">\</span></li>
+                <li>Compilation Errors</li>
+            </ul>                <div class="package-contents">                        <a name="head.php" id="head.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>head.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="font\timesb.php" id="font\timesb.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>font\timesb.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="font\helveticab.php" id="font\helveticab.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>font\helveticab.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                </div>                <div class="package-contents">                        <a name="font\times.php" id="font\times.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>font\times.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="requete\historiqueCourse.php" id="requete\historiqueCourse.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>requete\historiqueCourse.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="bdd.php" id="bdd.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>bdd.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="font\helveticai.php" id="font\helveticai.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>font\helveticai.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="requete\connexion.php" id="requete\connexion.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>requete\connexion.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="requete\Panier.php" id="requete\Panier.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>requete\Panier.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                </div>                <div class="package-contents">                        <a name="HistoriqueMembre.php" id="HistoriqueMembre.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>HistoriqueMembre.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                </div>                <div class="package-contents">                        <a name="vendor\codeguy\upload\src\Upload\Storage\Base.php" id="vendor\codeguy\upload\src\Upload\Storage\Base.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>vendor\codeguy\upload\src\Upload\Storage\Base.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>44</td>
+                                        <td>No summary for method upload()</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="classe\course.php" id="classe\course.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>classe\course.php
+                            <small style="float: right;padding-right: 10px;">12</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>No summary for property $_NumCourse</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>18</td>
+                                        <td>No summary for property $_Description</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>19</td>
+                                        <td>No summary for property $_Date</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>20</td>
+                                        <td>No summary for property $_Heure</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>21</td>
+                                        <td>No summary for property $_SensCourse</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>22</td>
+                                        <td>No summary for property $_NombreTours</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>23</td>
+                                        <td>No summary for property $_DirecteurCourse</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>24</td>
+                                        <td>No summary for property $_ResponsablePiste</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>25</td>
+                                        <td>No summary for property $_CategorieKart</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>26</td>
+                                        <td>No summary for property $_Prix</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>27</td>
+                                        <td>No summary for property $_Remarques</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="requete\gestionCourse.php" id="requete\gestionCourse.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>requete\gestionCourse.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="requete\autocompletion.php" id="requete\autocompletion.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>requete\autocompletion.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="deconnexion.php" id="deconnexion.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>deconnexion.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="vendor\codeguy\upload\tests\FileTest.php" id="vendor\codeguy\upload\tests\FileTest.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>vendor\codeguy\upload\tests\FileTest.php
+                            <small style="float: right;padding-right: 10px;">21</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>2</td>
+                                        <td>No summary for class \FileTest</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>12</td>
+                                        <td>No summary for method setUp()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>22</td>
+                                        <td>No summary for method getNewFile()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>56</td>
+                                        <td>No summary for method testConstructionWithInvalidKey()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>61</td>
+                                        <td>No summary for method testGetName()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>67</td>
+                                        <td>No summary for method testGetNameWithExtension()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>73</td>
+                                        <td>No summary for method testGetNameWithExtensionUsingCustomName()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>80</td>
+                                        <td>No summary for method testGetMimetype()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>86</td>
+                                        <td>No summary for method testAddValidationErrors()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>93</td>
+                                        <td>No summary for method testIsValidIfNoValidations()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>99</td>
+                                        <td>No summary for method testWillUploadIfNoValidations()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>105</td>
+                                        <td>No summary for method testAddValidations()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>114</td>
+                                        <td>No summary for method testWillUploadWithPassingValidations()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>126</td>
+                                        <td>No summary for method testWillNotUploadWithFailingValidations()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>135</td>
+                                        <td>No summary for method testPopulatesErrorsWithFailingValidations()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>148</td>
+                                        <td>No summary for method testValidationFailsIfUploadErrorCode()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>155</td>
+                                        <td>No summary for method testValidationFailsIfNotUploadedFile()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>168</td>
+                                        <td>No summary for method testParsesHumanFriendlyFileSizes()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>4</td>
+                                        <td>No summary for property $assetsDirectory</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>6</td>
+                                        <td>No summary for property $storage</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="uneCourse.php" id="uneCourse.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>uneCourse.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="vendor\composer\autoload_classmap.php" id="vendor\composer\autoload_classmap.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>vendor\composer\autoload_classmap.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="font\timesi.php" id="font\timesi.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>font\timesi.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                </div>                <div class="package-contents">                        <a name="Menu.php" id="Menu.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>Menu.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="vendor\composer\ClassLoader.php" id="vendor\composer\ClassLoader.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>vendor\composer\ClassLoader.php
+                            <small style="float: right;padding-right: 10px;">18</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>60</td>
+                                        <td>No summary for method getPrefixes()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>69</td>
+                                        <td>No summary for method getPrefixesPsr4()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>74</td>
+                                        <td>No summary for method getFallbackDirs()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>79</td>
+                                        <td>No summary for method getFallbackDirsPsr4()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>84</td>
+                                        <td>No summary for method getClassMap()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>92</td>
+                                        <td>No summary for method addClassMap()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>370</td>
+                                        <td>No summary for method findFileWithExtension()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>46</td>
+                                        <td>No summary for property $prefixLengthsPsr4</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>47</td>
+                                        <td>No summary for property $prefixDirsPsr4</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>48</td>
+                                        <td>No summary for property $fallbackDirsPsr4</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>51</td>
+                                        <td>No summary for property $prefixesPsr0</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>52</td>
+                                        <td>No summary for property $fallbackDirsPsr0</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>54</td>
+                                        <td>No summary for property $useIncludePath</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>55</td>
+                                        <td>No summary for property $classMap</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>56</td>
+                                        <td>No summary for property $classMapAuthoritative</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>57</td>
+                                        <td>No summary for property $missingClasses</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>58</td>
+                                        <td>No summary for property $apcuPrefix</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="font\courier.php" id="font\courier.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>font\courier.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="vendor\composer\autoload_static.php" id="vendor\composer\autoload_static.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>vendor\composer\autoload_static.php
+                            <small style="float: right;padding-right: 10px;">4</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>7</td>
+                                        <td>No summary for class \Composer\Autoload\ComposerStaticInitcc190c915c63174ab375f3321d1093a2</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>19</td>
+                                        <td>No summary for method getInitializer()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>9</td>
+                                        <td>No summary for property $prefixesPsr0</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="vendor\composer\autoload_real.php" id="vendor\composer\autoload_real.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>vendor\composer\autoload_real.php
+                            <small style="float: right;padding-right: 10px;">5</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>5</td>
+                                        <td>No summary for class \ComposerAutoloaderInitcc190c915c63174ab375f3321d1093a2</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>9</td>
+                                        <td>No summary for method loadClassLoader()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>16</td>
+                                        <td>No summary for method getLoader()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>7</td>
+                                        <td>No summary for property $loader</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="fpdf.php" id="fpdf.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>fpdf.php
+                            <small style="float: right;padding-right: 10px;">146</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>12</td>
+                                        <td>No summary for class \FPDF</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>74</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>172</td>
+                                        <td>No summary for method SetMargins()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>182</td>
+                                        <td>No summary for method SetLeftMargin()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>190</td>
+                                        <td>No summary for method SetTopMargin()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>196</td>
+                                        <td>No summary for method SetRightMargin()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>202</td>
+                                        <td>No summary for method SetAutoPageBreak()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>210</td>
+                                        <td>No summary for method SetDisplayMode()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>223</td>
+                                        <td>No summary for method SetCompression()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>232</td>
+                                        <td>No summary for method SetTitle()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>238</td>
+                                        <td>No summary for method SetAuthor()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>244</td>
+                                        <td>No summary for method SetSubject()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>250</td>
+                                        <td>No summary for method SetKeywords()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>256</td>
+                                        <td>No summary for method SetCreator()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>262</td>
+                                        <td>No summary for method AliasNbPages()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>268</td>
+                                        <td>No summary for method Error()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>274</td>
+                                        <td>No summary for method Close()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>291</td>
+                                        <td>No summary for method AddPage()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>360</td>
+                                        <td>No summary for method Header()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>365</td>
+                                        <td>No summary for method Footer()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>370</td>
+                                        <td>No summary for method PageNo()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>376</td>
+                                        <td>No summary for method SetDrawColor()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>387</td>
+                                        <td>No summary for method SetFillColor()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>399</td>
+                                        <td>No summary for method SetTextColor()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>409</td>
+                                        <td>No summary for method GetStringWidth()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>421</td>
+                                        <td>No summary for method SetLineWidth()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>429</td>
+                                        <td>No summary for method Line()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>435</td>
+                                        <td>No summary for method Rect()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>447</td>
+                                        <td>No summary for method AddFont()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>472</td>
+                                        <td>No summary for method SetFont()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>522</td>
+                                        <td>No summary for method SetFontSize()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>533</td>
+                                        <td>No summary for method AddLink()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>541</td>
+                                        <td>No summary for method SetLink()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>551</td>
+                                        <td>No summary for method Link()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>557</td>
+                                        <td>No summary for method Text()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>570</td>
+                                        <td>No summary for method AcceptPageBreak()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>576</td>
+                                        <td>No summary for method Cell()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>656</td>
+                                        <td>No summary for method MultiCell()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>771</td>
+                                        <td>No summary for method Write()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>854</td>
+                                        <td>No summary for method Ln()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>864</td>
+                                        <td>No summary for method Image()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>929</td>
+                                        <td>No summary for method GetPageWidth()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>935</td>
+                                        <td>No summary for method GetPageHeight()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>941</td>
+                                        <td>No summary for method GetX()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>947</td>
+                                        <td>No summary for method SetX()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>956</td>
+                                        <td>No summary for method GetY()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>962</td>
+                                        <td>No summary for method SetY()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>973</td>
+                                        <td>No summary for method SetXY()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>980</td>
+                                        <td>No summary for method Output()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1037</td>
+                                        <td>No summary for method _dochecks()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1044</td>
+                                        <td>No summary for method _checkoutput()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1064</td>
+                                        <td>No summary for method _getpagesize()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1083</td>
+                                        <td>No summary for method _beginpage()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1130</td>
+                                        <td>No summary for method _endpage()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1135</td>
+                                        <td>No summary for method _loadfont()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1150</td>
+                                        <td>No summary for method _isascii()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1162</td>
+                                        <td>No summary for method _httpencode()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1175</td>
+                                        <td>No summary for method _UTF8toUTF16()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1208</td>
+                                        <td>No summary for method _escape()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1217</td>
+                                        <td>No summary for method _textstring()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1225</td>
+                                        <td>No summary for method _dounderline()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1234</td>
+                                        <td>No summary for method _parsejpg()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1253</td>
+                                        <td>No summary for method _parsepng()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1264</td>
+                                        <td>No summary for method _parsepngstream()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1390</td>
+                                        <td>No summary for method _readstream()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1407</td>
+                                        <td>No summary for method _readint()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1414</td>
+                                        <td>No summary for method _parsegif()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1439</td>
+                                        <td>No summary for method _out()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1452</td>
+                                        <td>No summary for method _put()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1457</td>
+                                        <td>No summary for method _getoffset()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1462</td>
+                                        <td>No summary for method _newobj()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1471</td>
+                                        <td>No summary for method _putstream()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1478</td>
+                                        <td>No summary for method _putstreamobject()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1494</td>
+                                        <td>No summary for method _putpage()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1536</td>
+                                        <td>No summary for method _putpages()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1566</td>
+                                        <td>No summary for method _putfonts()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1683</td>
+                                        <td>No summary for method _tounicodecmap()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1734</td>
+                                        <td>No summary for method _putimages()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1744</td>
+                                        <td>No summary for method _putimage()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1789</td>
+                                        <td>No summary for method _putxobjectdict()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1795</td>
+                                        <td>No summary for method _putresourcedict()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1807</td>
+                                        <td>No summary for method _putresources()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1819</td>
+                                        <td>No summary for method _putinfo()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1827</td>
+                                        <td>No summary for method _putcatalog()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1848</td>
+                                        <td>No summary for method _putheader()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1853</td>
+                                        <td>No summary for method _puttrailer()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>1860</td>
+                                        <td>No summary for method _enddoc()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>14</td>
+                                        <td>No summary for property $page</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>15</td>
+                                        <td>No summary for property $n</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>16</td>
+                                        <td>No summary for property $offsets</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>No summary for property $buffer</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>18</td>
+                                        <td>No summary for property $pages</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>19</td>
+                                        <td>No summary for property $state</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>20</td>
+                                        <td>No summary for property $compress</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>21</td>
+                                        <td>No summary for property $k</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>22</td>
+                                        <td>No summary for property $DefOrientation</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>23</td>
+                                        <td>No summary for property $CurOrientation</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>24</td>
+                                        <td>No summary for property $StdPageSizes</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>25</td>
+                                        <td>No summary for property $DefPageSize</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>26</td>
+                                        <td>No summary for property $CurPageSize</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>27</td>
+                                        <td>No summary for property $CurRotation</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>28</td>
+                                        <td>No summary for property $PageInfo</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>29</td>
+                                        <td>No summary for property $wPt</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>29</td>
+                                        <td>No summary for property $hPt</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>30</td>
+                                        <td>No summary for property $w</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>30</td>
+                                        <td>No summary for property $h</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>31</td>
+                                        <td>No summary for property $lMargin</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>32</td>
+                                        <td>No summary for property $tMargin</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>33</td>
+                                        <td>No summary for property $rMargin</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>34</td>
+                                        <td>No summary for property $bMargin</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>35</td>
+                                        <td>No summary for property $cMargin</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>36</td>
+                                        <td>No summary for property $x</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>36</td>
+                                        <td>No summary for property $y</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>37</td>
+                                        <td>No summary for property $lasth</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>38</td>
+                                        <td>No summary for property $LineWidth</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>39</td>
+                                        <td>No summary for property $fontpath</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>40</td>
+                                        <td>No summary for property $CoreFonts</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>41</td>
+                                        <td>No summary for property $fonts</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>42</td>
+                                        <td>No summary for property $FontFiles</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>43</td>
+                                        <td>No summary for property $encodings</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>44</td>
+                                        <td>No summary for property $cmaps</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>45</td>
+                                        <td>No summary for property $FontFamily</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>46</td>
+                                        <td>No summary for property $FontStyle</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>47</td>
+                                        <td>No summary for property $underline</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>48</td>
+                                        <td>No summary for property $CurrentFont</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>49</td>
+                                        <td>No summary for property $FontSizePt</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>50</td>
+                                        <td>No summary for property $FontSize</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>51</td>
+                                        <td>No summary for property $DrawColor</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>52</td>
+                                        <td>No summary for property $FillColor</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>53</td>
+                                        <td>No summary for property $TextColor</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>54</td>
+                                        <td>No summary for property $ColorFlag</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>55</td>
+                                        <td>No summary for property $WithAlpha</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>56</td>
+                                        <td>No summary for property $ws</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>57</td>
+                                        <td>No summary for property $images</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>58</td>
+                                        <td>No summary for property $PageLinks</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>59</td>
+                                        <td>No summary for property $links</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>60</td>
+                                        <td>No summary for property $AutoPageBreak</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>61</td>
+                                        <td>No summary for property $PageBreakTrigger</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>62</td>
+                                        <td>No summary for property $InHeader</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>63</td>
+                                        <td>No summary for property $InFooter</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>64</td>
+                                        <td>No summary for property $AliasNbPages</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>65</td>
+                                        <td>No summary for property $ZoomMode</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>66</td>
+                                        <td>No summary for property $LayoutMode</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>67</td>
+                                        <td>No summary for property $metadata</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>68</td>
+                                        <td>No summary for property $PDFVersion</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="font\helveticabi.php" id="font\helveticabi.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>font\helveticabi.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="GestionCourses.php" id="GestionCourses.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>GestionCourses.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="font\courierb.php" id="font\courierb.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>font\courierb.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="ListeCourses.php" id="ListeCourses.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>ListeCourses.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="vendor\codeguy\upload\tests\Validation\MimetypeTest.php" id="vendor\codeguy\upload\tests\Validation\MimetypeTest.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>vendor\codeguy\upload\tests\Validation\MimetypeTest.php
+                            <small style="float: right;padding-right: 10px;">4</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>2</td>
+                                        <td>No summary for class \MimetypeTest</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>30</td>
+                                        <td>No summary for method testValidMimetype()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>39</td>
+                                        <td>No summary for method testInvalidMimetype()</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="requete\paiement.php" id="requete\paiement.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>requete\paiement.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="Footer.php" id="Footer.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>Footer.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="Panier.php" id="Panier.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>Panier.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="vendor\codeguy\upload\tests\Validation\ExtensionTest.php" id="vendor\codeguy\upload\tests\Validation\ExtensionTest.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>vendor\codeguy\upload\tests\Validation\ExtensionTest.php
+                            <small style="float: right;padding-right: 10px;">4</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>2</td>
+                                        <td>No summary for class \ExtensionTest</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>30</td>
+                                        <td>No summary for method testValidExtension()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>37</td>
+                                        <td>No summary for method testInvalidExtension()</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="font\helvetica.php" id="font\helvetica.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>font\helvetica.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="Connexion.php" id="Connexion.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>Connexion.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="vendor\codeguy\upload\tests\bootstrap.php" id="vendor\codeguy\upload\tests\bootstrap.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>vendor\codeguy\upload\tests\bootstrap.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="font\courieri.php" id="font\courieri.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>font\courieri.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="classe\membre.php" id="classe\membre.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>classe\membre.php
+                            <small style="float: right;padding-right: 10px;">12</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>No summary for property $_NumMembre</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>18</td>
+                                        <td>No summary for property $_Nom</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>19</td>
+                                        <td>No summary for property $_Prenom</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>20</td>
+                                        <td>No summary for property $_Tel</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>21</td>
+                                        <td>No summary for property $_Courriel</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>22</td>
+                                        <td>No summary for property $_MotDePasse</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>23</td>
+                                        <td>No summary for property $_VerifMdp</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>24</td>
+                                        <td>No summary for property $_DateNaissance</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>25</td>
+                                        <td>No summary for property $_AnneeXpKarting</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>26</td>
+                                        <td>No summary for property $_Poids</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>27</td>
+                                        <td>No summary for property $_Photo</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                </div>                <div class="package-contents">                        <a name="font\zapfdingbats.php" id="font\zapfdingbats.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>font\zapfdingbats.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                </div>                <div class="package-contents">                        <a name="font\symbol.php" id="font\symbol.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>font\symbol.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="index.php" id="index.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>index.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="HistoriqueAdmin.php" id="HistoriqueAdmin.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>HistoriqueAdmin.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                </div>                <div class="package-contents">                        <a name="vendor\codeguy\upload\src\Upload\Exception\UploadException.php" id="vendor\codeguy\upload\src\Upload\Exception\UploadException.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>vendor\codeguy\upload\src\Upload\Exception\UploadException.php
+                            <small style="float: right;padding-right: 10px;">2</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>4</td>
+                                        <td>No summary for class \Upload\Exception\UploadException</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="font\courierbi.php" id="font\courierbi.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>font\courierbi.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="CreerCompte.php" id="CreerCompte.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>CreerCompte.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="vendor\composer\autoload_namespaces.php" id="vendor\composer\autoload_namespaces.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>vendor\composer\autoload_namespaces.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="vendor\codeguy\upload\tests\Validation\SizeTest.php" id="vendor\codeguy\upload\tests\Validation\SizeTest.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>vendor\codeguy\upload\tests\Validation\SizeTest.php
+                            <small style="float: right;padding-right: 10px;">6</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>2</td>
+                                        <td>No summary for class \SizeTest</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>30</td>
+                                        <td>No summary for method testValidFileSize()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>37</td>
+                                        <td>No summary for method testValidFileSizeWithHumanReadableArgument()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>44</td>
+                                        <td>No summary for method testInvalidFileSize()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>51</td>
+                                        <td>No summary for method testInvalidFileSizeWithHumanReadableArgument()</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="vendor\codeguy\upload\tests\Storage\FileSystemTest.php" id="vendor\codeguy\upload\tests\Storage\FileSystemTest.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>vendor\codeguy\upload\tests\Storage\FileSystemTest.php
+                            <small style="float: right;padding-right: 10px;">4</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>2</td>
+                                        <td>No summary for class \FileSystemTest</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>20</td>
+                                        <td>No summary for method testInstantiationWithValidDirectory()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>36</td>
+                                        <td>No summary for method testInstantiationWithInvalidDirectory()</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="vendor\autoload.php" id="vendor\autoload.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>vendor\autoload.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="font\timesbi.php" id="font\timesbi.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>font\timesbi.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="requete\enregistrement.php" id="requete\enregistrement.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>requete\enregistrement.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="requete\genererPDF.php" id="requete\genererPDF.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>requete\genererPDF.php
+                            <small style="float: right;padding-right: 10px;">4</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>21</td>
+                                        <td>No summary for class \PDF</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>24</td>
+                                        <td>No summary for method Header()</td>
+                                    </tr>                                    <tr>
+                                        <td>error</td>
+                                        <td>39</td>
+                                        <td>No summary for method Footer()</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>                <div class="package-contents">                        <a name="vendor\composer\autoload_psr4.php" id="vendor\composer\autoload_psr4.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>vendor\composer\autoload_psr4.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>                            </tbody>
+                            </table>
+                        </div>                </div>        </div>
+    </section>
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">                            <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>                                        <li><a href="../namespaces/Composer.html">\Composer</a></li>                                        <li><a href="../namespaces/Upload.html">\Upload</a></li>                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">                            <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">                            <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    onFebruary 23rd, 2020 at 23:32.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

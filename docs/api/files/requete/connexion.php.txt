@@ -1,0 +1,45 @@
+<?php
+
+include '../bdd.php';
+
+if(isset($_POST['SeConnecter']))
+{
+    $email = htmlentities($_POST['email']);
+    $mdp = md5(htmlentities($_POST['mdp']));
+
+    if(empty($email) || empty($mdp))
+    {
+        header('Location: ../Connexion.php?erreur=1');
+    }
+    else{
+        $resultat = Membre::ConnexionMembre($email, $mdp);
+
+        if(empty($resultat))
+        {
+            header('Location: ../Connexion.php?erreur=2');
+        }
+        else
+        {
+            $_SESSION['NumMembre'] = $resultat[0]['NumMembre'];
+            $_SESSION['prenom'] = $resultat[0]['Prenom'];
+            $_SESSION['photo'] = $resultat[0]['Photo'];
+
+            if($resultat[0]['Admin'] == 1)
+            {
+                $_SESSION['admin'] = $resultat[0]['Admin'];
+            }
+
+             header('Location: ../ListeCourses.php');
+        }
+    }
+}
+else
+{
+    header('Location: ../index.php');
+}
+
+
+
+
+
+?>

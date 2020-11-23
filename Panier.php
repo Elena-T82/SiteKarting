@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <?php include 'head.php' ?>
+    <title>Panier - site karting</title>
+</head>
+
+<body>
+
+<script>
+
+function test(numCourse)
+{
+    $('#test2').load('Requete/Panier.php?RetirerCourse=' + numCourse);
+    
+}
+
+</script>
+
+<?php
+
+include 'bdd.php';
+include 'Menu.php';
+
+if($_SESSION['prenom'])
+{
+    if(isset($_GET['NumMembre']))
+    {
+        echo "<div class='alignDroite'>";
+        echo 'Bonjour ' . $_SESSION['prenom'] . " !";
+        echo "<img src='img/PhotoMembre/" . $_SESSION['photo'] ."' alt='PhotoProfil'>";
+        echo "</div>";
+        
+        echo "<h1 class='ombreJaune'>Votre panier</h2>";
+
+        $numMembre = $_GET['NumMembre'];
+
+        $resultat = Course::SelectPanier($numMembre);
+
+        if(isset($_GET['success']))
+        {
+            if($_GET['success'])
+            {?>
+            <div class="container">
+                <div class="alert alert-success" role="alert">
+                    Votre achat a bien été effectué
+                </div>
+            </div>
+        <?php }
+        }
+
+        if(empty($resultat))
+        {?>
+            <div class="container">
+                <div class="alert alert-warning" role="alert">
+                    Votre panier est vide !
+                </div>
+            </div>
+
+        <?php
+        }
+        else
+        {
+            ?>
+            
+    <section class="container">
+        <div id="test2">
+            <?php
+
+            $totalPanier = 0;
+
+            foreach($resultat as $result) : ?>
+
+        <?php
+            $date = Course::formaterDate($result['Date'], $result['Heure']);
+            $prix = Course::formaterPrix($result['Prix']);
+        ?>
+        
+                <article class='articlePanier'>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p><strong class="titreCourse"><?php echo $result['Description'];?></strong></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p><strong>Remarque : </strong><?php echo $result['Remarque'];?></p><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p><strong>Date</strong></p>
+                        </div>
+                        <div class="col-md-3">
+                            <p><strong>Heure</strong></p>
+                        </div>
+                        <div class="col-md-3">
+                            <p><strong>Nombre de tours</strong></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p><?php echo $date[1];?></p>
+                        </div>
+                        <div class="col-md-3">
+                            <p><?php echo $date[2];?></p>
+                        </div>
+                        <div class="col-md-3">
+                            <p><?php echo $result['NombreTours'];?></p>
+                        </div>
+                        <div class="col-md-3 float-right">
+                            <a href="uneCourse.php?NumCourse=<?= $result['NumCourse']?>"><button type="button" class="btn btn-dark float-right">Détails ►</button></a>
+                        </div> 
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="col-md-2">
+                            <p><?php echo $prix;?></p>
+                        </div>
+                        <div class="col-md-2">
+                            <button id="btnRetirerPanier" type="button" class="btn btn-dark float-right" onclick="test('<?php echo $result['NumCourse'] ?>')">Retirer du panier</button>
+                        </div>
+                    </div>
+
+                    <?php 
+
+                    $totalPanier += $result['Prix'];
+
+                    ?>
+
+                </article>
+            <?php endforeach ?>
+            
+            <form action="requete/paiement.php" method="post">
+                <input type="submit" class="btn btn-dark float-right" name="paiement" value="Procéder au paiement">
+                <input type="hidden" name="total" value="<?= $totalPanier ?>">
+                <label style="margin-right: 50px" class="float-right"><?= "Total : " . $totalPanier . " $ (prix TTC)" ?></label>
+            </form>
+
+        </div>
+    </section>
+            <?php
+        }
+    }
+    else
+    {
+        header('Location: ListeCourses.php?erreur=2');
+    }
+}
+else
+{
+    header('Location: Connexion.php?erreur=3');
+}
+
+include 'footer.php';
+
+?>
+
+</body>
+</html>

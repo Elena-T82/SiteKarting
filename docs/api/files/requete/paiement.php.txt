@@ -1,0 +1,29 @@
+<?php
+
+include '../bdd.php';
+
+if(isset($_SESSION['prenom']))
+{
+    if(isset($_POST['paiement']))
+    {
+        $numMembre = $_SESSION['NumMembre'];
+
+        $coursePanier = Course::SelectPanier($numMembre);
+
+        foreach($coursePanier as $uneCourse)
+        {
+            $achat = Course::acheterCourse($numMembre, $uneCourse['NumCourse']);
+        }
+
+        header('Location: ../Panier.php?NumMembre=' . $numMembre . '&success=1');
+    }
+}
+else
+{
+    header('Location: ../ListeCourses.php?erreur=1');
+}
+
+
+
+
+?>

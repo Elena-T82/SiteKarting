@@ -1,0 +1,493 @@
+<?php
+
+
+/**
+ * Ma classe Course
+ * 
+ * Description : Dans cette classe sont regroupés toutes les méthodes concernant une course.
+ * 
+ * @author elena tasquier
+ * @copyright Février 2020
+ * @version 1.0
+ */
+
+class course
+{
+
+    private $_NumCourse;
+    private $_Description;
+    private $_Date;
+    private $_Heure;
+    private $_SensCourse;
+    private $_NombreTours;
+    private $_DirecteurCourse;
+    private $_ResponsablePiste;
+    private $_CategorieKart;
+    private $_Prix;
+    private $_Remarques;
+
+
+    
+    /**
+     * __construct
+     *
+     * @param  mixed $description
+     * @param  mixed $date
+     * @param  mixed $heure
+     * @param  mixed $sensCourse
+     * @param  mixed $nombreTours
+     * @param  mixed $directeurCourse
+     * @param  mixed $responsablePiste
+     * @param  mixed $categorieKart
+     * @param  mixed $remarques
+     *
+     * @return void
+     */
+    public function __construct($description, $date, $heure, $sensCourse, $nombreTours, $directeurCourse, $responsablePiste, $categorieKart, $remarques)
+    {
+        $this->__set("_Description", $description);
+        $this->__set("_Date", $date);
+        $this->__set("_Heure", $heure);
+        $this->__set("_SensCourse", $sensCourse);
+        $this->__set("_NombreTours", $nombreTours);
+        $this->__set("_DirecteurCourse", $directeurCourse);
+        $this->__set("_ResponsablePiste", $responsablePiste);
+        $this->__set("_CategorieKart", $categorieKart);
+        $this->__set("_Remarques", $remarques);
+
+        $this->_Prix = $this->definirPrix();
+    }
+
+
+    
+    /**
+     * __get : retourne les attributs privé de la classe
+     *
+     * @param  mixed $name
+     *
+     * @return void
+     */
+    public function __get($name)
+    {
+        return $this->$name;
+    }
+
+
+    /**
+     * __set : permet de caster les attributs de la classe
+     *
+     * @param  mixed $name
+     * @param  mixed $valeur
+     *
+     * @return void
+     */
+    public function __set($name, $valeur)
+    {
+        if ($name == "_NombreTours") {
+            $this->$name = (int) $valeur;
+        } else {
+            $this->$name = (string) $valeur;
+        }
+    }
+
+
+    /**
+     * formaterPrix
+     *
+     * @param  mixed $prix
+     *
+     * @return void
+     */
+    public static function formaterPrix($prix)
+    {
+        $prix = $prix . ' $ (prix TTC)';
+
+        return $prix;
+    }
+
+
+    
+    /**
+     * formaterDate : met la date en format écriture française
+     *
+     * @param  mixed $date
+     * @param  mixed $heure
+     *
+     * @return void
+     */
+    public static function formaterDate($date, $heure)
+    {
+        $annee = substr($date, 0, 4);
+        $mois = substr($date, 5, 2);
+        $jour = substr($date, 8, 2);
+
+        $NewHeure = substr($heure, 0, 5);
+
+        switch($mois)
+        {
+            case '01' :
+                $mois = "Janvier";
+            break;
+
+            case '02' :
+                $mois = "Février";
+            break;
+
+            case '03' :
+                $mois = "Mars";
+            break;
+
+            case '04' :
+                $mois = "Avril";
+            break;
+
+            case '05' :
+                $mois = "Mai";
+            break;
+
+            case '06' :
+                $mois = "Juin";
+            break;
+
+            case '07' :
+                $mois = "Juillet";
+            break;
+
+            case '08' :
+                $mois = "Août";
+            break;
+
+            case '09' :
+                $mois = "Septembre";
+            break;
+
+            case '10' :
+                $mois = "Octobre";
+            break;
+
+            case '11' :
+                $mois = "Novembre";
+            break;
+
+            case '12' :
+                $mois = "Décembre";
+            break;
+        }
+
+        $resultatDate = $jour . ' '. $mois . ' ' . $annee;
+
+        $resultat[] = array();
+        $resultat[] = $resultatDate;
+        $resultat[] = $NewHeure;
+
+        return $resultat;
+    }
+
+    
+    /**
+     * definirPrix : défini le prix en fonction du nombre de tours.
+     *
+     * @return void
+     */
+    public function definirPrix()
+    {
+        $prix = $this->_NombreTours * 3;
+
+        return $prix;
+    }
+
+
+    
+    /**
+     * AjouterCourse : ajoute une course dans la bdd
+     *
+     * @return void
+     */
+    public function AjouterCourse()
+    {
+        global $bdd;
+
+        $requete = $bdd->prepare("INSERT INTO `course` (`Description`, `Date`, `Heure`, `SensCourse`, `NombreTours`, `DirecteurCourse`, `ResponsableCourse`, `CategorieKart`, `Prix`, `Remarque`) value(:description, :date, :heure, :sensCourse, :nombreTours, :directeurCourse, :responsableCourse, :categorieKart, :prix, :remarque)");
+
+        $requete->bindValue(":description", $this->_Description);
+        $requete->bindValue(":date", $this->_Date);
+        $requete->bindValue(":heure", $this->_Heure);
+        $requete->bindValue(":sensCourse", $this->_SensCourse);
+        $requete->bindValue(":nombreTours", $this->_NombreTours);
+        $requete->bindValue(":directeurCourse", $this->_DirecteurCourse);
+        $requete->bindValue(":responsableCourse", $this->_ResponsablePiste);
+        $requete->bindValue(":categorieKart", $this->_CategorieKart);
+        $requete->bindValue(":prix", $this->_Prix);
+        $requete->bindValue(":remarque", $this->_Remarques);
+
+        $requete->execute();
+    }
+
+    
+
+    /**
+     * ModifierCourse : modifie une course dans la bdd
+     *
+     * @param  mixed $idCourse
+     *
+     * @return void
+     */
+    public function ModifierCourse($idCourse)
+    {
+        global $bdd;
+
+        $requete = $bdd->prepare("UPDATE `course` SET `Description`= :description, `Date` = :date, `Heure` = :heure, `SensCourse` = :sensCourse, `NombreTours` = :nombreTours, `DirecteurCourse` = :directeurCourse, `ResponsableCourse` = :responsableCourse, `CategorieKart` = :categorieKart, `Prix` = :prix, `Remarque` = :remarque WHERE NumCourse = :numCourse");
+
+        $requete->bindValue(":description", $this->_Description);
+        $requete->bindValue(":date", $this->_Date);
+        $requete->bindValue(":heure", $this->_Heure);
+        $requete->bindValue(":sensCourse", $this->_SensCourse);
+        $requete->bindValue(":nombreTours", $this->_NombreTours);
+        $requete->bindValue(":directeurCourse", $this->_DirecteurCourse);
+        $requete->bindValue(":responsableCourse", $this->_ResponsablePiste);
+        $requete->bindValue(":categorieKart", $this->_CategorieKart);
+        $requete->bindValue(":prix", $this->_Prix);
+        $requete->bindValue(":remarque", $this->_Remarques);
+
+        $requete->bindValue(':numCourse', $idCourse);
+
+        $requete->execute();
+    }
+
+
+    /**
+     * SupprimerCourse : supprime une course dans la bdd
+     *
+     * @param  mixed $idCourse
+     *
+     * @return void
+     */
+    public static function SupprimerCourse($idCourse)
+    {
+        global $bdd;
+
+        $requete = $bdd->prepare("DELETE FROM course WHERE NumCourse = :numCourse");
+
+        $requete->bindValue(":numCourse", $idCourse);
+
+        $requete->execute();
+
+    }
+
+
+    /**
+     * SelectCourse : selectionne toutes les courses dans la bdd
+     *
+     * @return void
+     */
+    public static function SelectCourse()
+    {
+        global $bdd;
+
+        $requete = $bdd->query("SELECT * FROM course");
+
+        $resultat = $requete->fetchAll();
+
+        return $resultat;
+    }
+
+
+    
+    /**
+     * SelectCourseAVenir : selectionne toutes les courses dans la bdd qui ont une date supérieur à la date du jour
+     *
+     * @return void
+     */
+    public static function SelectCourseAVenir()
+    {
+        global $bdd;
+
+        $requete = $bdd->query("SELECT * FROM course WHERE course.Date >= CURRENT_TIMESTAMP");
+
+        $resultat = $requete->fetchAll();
+
+        return $resultat;
+    }
+
+    
+    /**
+     * SelectCourseSpecifique : Selectionne une course en particulier
+     *
+     * @param  mixed $numCourse
+     *
+     * @return void
+     */
+    public static function SelectCourseSpecifique($numCourse)
+    {
+        global $bdd;
+
+        $requete = $bdd->prepare("SELECT * FROM course WHERE NumCourse = :course");
+        $requete->bindValue(":course", $numCourse);
+        $requete->execute();
+        
+        $resultat = $requete->fetchAll();
+
+        return $resultat;
+    }
+
+
+    
+    /**
+     * SelectCoursePanierOuAcheter : selectionne la course en parametre par le membre en parametre si elle est achetée ou reservée
+     *
+     * @param  mixed $numMembre
+     * @param  mixed $numCourse
+     *
+     * @return void
+     */
+    public static function SelectCoursePanierOuAcheter($numMembre, $numCourse)
+    {
+        global $bdd;
+
+        $requete = $bdd->prepare("SELECT `NumMembre`, `NumCourse` FROM `achat` WHERE NumMembre = :membre AND NumCourse = :course");
+        $requete->bindValue(":membre", $numMembre);
+        $requete->bindValue(":course", $numCourse);
+        $requete->execute();
+
+        $resultat = $requete->fetchAll();
+
+        return $resultat;
+
+    }
+
+
+    /**
+     * SelectCourseAcheter : selectionne toutes les courses qui sont achetées définitivement par le membre passé en paramêtre
+     *
+     * @param  mixed $numMembre
+     *
+     * @return void
+     */
+    public static function SelectCourseAcheter($numMembre)
+    {
+        global $bdd;
+
+        $requete = $bdd->prepare("SELECT `NumMembre`, `Course`.* FROM `achat` INNER JOIN `course` ON (achat.NumCourse = course.NumCourse) WHERE NumMembre = :membre AND panier = 0");
+        $requete->bindValue(":membre", $numMembre);
+        $requete->execute();
+
+        $resultat = $requete->fetchAll();
+
+        return $resultat;
+    }
+
+
+    
+    /**
+     * SelectPanier : selectionne les courses dans le panier du membre passé en paramêtre
+     *
+     * @param  mixed $numMembre
+     *
+     * @return void
+     */
+    public static function SelectPanier($numMembre)
+    {
+        global $bdd;
+
+        $requete = $bdd->prepare("SELECT `NumMembre`, `Course`.* FROM `achat` INNER JOIN `course` ON (achat.NumCourse = course.NumCourse) WHERE NumMembre = :membre AND Panier = TRUE");
+        $requete->bindValue(":membre", $numMembre);
+        $requete->execute();
+
+        $resultat = $requete->fetchAll();
+
+        return $resultat;
+    }
+
+
+    
+    /**
+     * AjouterCoursePanier : permet de mettre une course dans le panier d'un membre
+     *
+     * @param  mixed $numMembre
+     * @param  mixed $numCourse
+     *
+     * @return void
+     */
+    public static function AjouterCoursePanier($numMembre, $numCourse)
+    {
+        global $bdd;
+
+        $requete = $bdd->prepare("INSERT INTO `achat` (`NumMembre`, `NumCourse`, `Panier`) value(:membre, :course, :panier)");
+
+        $requete->bindValue(":membre", $numMembre);
+        $requete->bindValue(":course", $numCourse);
+        $requete->bindValue(":panier", true);
+
+        $requete->execute();
+    }
+
+
+    
+    /**
+     * RetirerCoursePanier : permet de retirer la course en parametre du panier du membre en parametre
+     *
+     * @param  mixed $numMembre
+     * @param  mixed $numCourse
+     *
+     * @return void
+     */
+    public static function RetirerCoursePanier($numMembre, $numCourse)
+    {
+        global $bdd;
+
+        $requete = $bdd->prepare("DELETE FROM `achat` WHERE NumMembre = :membre AND NumCourse = :course");
+
+        $requete->bindValue(":membre", $numMembre);
+        $requete->bindValue(":course", $numCourse);
+
+        $requete->execute();
+
+    }
+
+
+    
+    /**
+     * acheterCourse : permet d'acheter définitivement une course
+     *
+     * @param  mixed $numMembre
+     * @param  mixed $numCourse
+     *
+     * @return void
+     */
+    public static function acheterCourse($numMembre, $numCourse)
+    {
+        global $bdd;
+
+        $requete = $bdd->prepare("UPDATE `achat` SET `Panier`= 0 WHERE `NumMembre`= :membre AND `NumCourse`=:course");
+
+        $requete->bindValue(":membre", $numMembre);
+        $requete->bindValue(":course", $numCourse);
+
+        $requete->execute();
+    }
+
+
+    
+    /**
+     * SelectCourseParMembre : selectionne tout les membres participants à une course
+     *
+     * @param  mixed $numMembre
+     *
+     * @return void
+     */
+    public static function SelectCourseParMembre($numMembre)
+    {
+        global $bdd;
+
+        $requete = $bdd->prepare('SELECT `Course`.* FROM course INNER JOIN achat on (achat.NumCourse = course.NumCourse) WHERE achat.NumMembre = :membre AND panier = 0');
+        $requete->bindValue(":membre", $numMembre);
+
+        $requete->execute();
+
+        $resultat = $requete->fetchAll();
+
+        return $resultat;
+    }
+
+}
+

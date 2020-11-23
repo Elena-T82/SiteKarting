@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <?php include 'head.php' ?>
+    <title>Connexion - site karting</title>
+</head>
+
+<body>
+    <?php
+
+    include('Menu.php');
+    ?>
+
+    <h1 class="ombreJaune">Connectez-vous à votre compte membre !</h1>
+
+    <div class="container">
+        <form method="post" action="requete/connexion.php">
+            <div class="form-group col-md-4 formAlign">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" autocomplete="off" required>
+            </div>
+            <div class="form-group col-md-4 formAlign">
+                <label for="mdp">Mot de passe</label>
+                <input type="password" class="form-control" name="mdp" autocomplete="off" required>
+            </div>
+            <button type="submit" class="btn btn-warning" name="SeConnecter">Se connecter</button>
+        </form>
+    </div>
+
+    <a class="LienInscription" href="CreerCompte.php">Toujours pas de compte ? S'enregistrer</a>
+
+    <?php
+    if (isset($_GET['success']))
+    {
+        if ($_GET['success'] == "1")
+        {
+    ?>
+        <div class="container">
+            <div class="alert alert-success" role="alert">
+                Votre enregistrement a été correctement effectué. Connectez-vous pour bénéficier des avantages membre !
+            </div>
+        </div>
+            <?php
+        }
+    }
+    elseif(isset($_GET['erreur']))
+    {
+        if($_GET['erreur'] == "1")
+        {
+        ?>
+            <div class="container">
+            <div class="alert alert-danger" role="alert">
+                Certains champs ne sont pas remplis. Veuillez remplir tous le formulaire pour vous connecter.
+            </div>
+        </div>
+        <?php
+        }
+        else if($_GET['erreur'] == "2")
+        {
+        ?>
+            <div class="container">
+            <div class="alert alert-danger" role="alert">
+                Vous n'avez pas de compte. Veuillez en créer un pour profiter des avantages membres.
+            </div>
+        </div>
+        <?php
+        }
+        else if($_GET['erreur'] == "3")
+        {
+        ?>
+            <div class="container">
+            <div class="alert alert-danger" role="alert">
+                Vous devez être connecté pour accéder à cette page.
+            </div>
+        </div>
+        <?php
+        }
+    }
+
+    include 'footer.php';
+    
+?>
+</body>
+
+</html>
